@@ -1,0 +1,22 @@
+{
+  "name": "shop",
+  "description": "Open sourced webshop application",
+  "version": "0.0.0",
+  "homepage": "https://github.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery-cookie": "~1",
+    "lodash": "~3",
+    "angular": "1.2.x",
+    "angular-mocks": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-resource": "1.2.x",
+    "angular-animate": "1.2.x",
+    "angular-cookies": "~1.2",
+    "angular-touch": "~1.2",
+    "angular-loading-bar": "~0",
+    "angular-ui-grid": "~3"
+  }
+}

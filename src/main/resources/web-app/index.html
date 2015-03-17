@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>System Monitor</title>
+
+  <script src="resources/libs/lodash/lodash.min.js"></script>
+  <script src="resources/libs/jquery/dist/jquery.min.js"></script>
+  <script src="resources/libs/jquery-cookie/jquery.cookie.js"></script>
+
+  <link rel="stylesheet" href="resources/libs/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="resources/libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
+  <script src="resources/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="resources/libs/angular/angular.js"></script>
+
+  <script src="resources/libs/angular-route/angular-route.js"></script>
+  <script src="resources/libs/angular-cookies/angular-cookies.min.js"></script>
+
+  <script src="resources/libs/angular-animate/angular-animate.min.js"></script>
+
+  <script src="resources/libs/angular-resource/angular-resource.min.js"></script>
+
+  <script src="resources/libs/angular-touch/angular-touch.min.js"></script>
+
+  <script src="resources/libs/angular-ui-grid/ui-grid.min.js"></script>
+  <link rel="stylesheet" href="resources/libs/angular-ui-grid/ui-grid.min.css"/>
+
+  <script src="resources/libs/angular-loading-bar/src/loading-bar.js"></script>
+  <link rel="stylesheet" href="resources/libs/angular-loading-bar/src/loading-bar.css"/>
+
+  <script src="resources/dist/all.min.js"></script>
+</head>
+<body ng-controller="AppController">
+<header>
+  <nav class="navbar navbar-static-top bs-docs-nav navbar-inverse">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li ng-class="{active:curPage.isUser()}"><a ng-href="#user">User</a></li>
+        <li ng-class="{active:curPage.isAdministrator()}"><a ng-href="#administrator">Administrator</a></li>
+        <li ng-class="{active:curPage.isConfiguration()}"><a ng-href="#configuration">Configuration</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main class="container">
+  <ng-view></ng-view>
+</main>
+
+</body>
+</html>

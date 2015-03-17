@@ -1,0 +1,14 @@
+target/
+projectFilesBackup
+project/target/**
+.DS_Store
+.idea*
+.java-version
+
+# web
+src/main/resources/web-app/node_modules/
+src/main/resources/web-app/resources/libs/
+*npm-debug.log
+
+#user defined conf
+application.conf
