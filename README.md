@@ -1,6 +1,6 @@
 # run
 OS - OSX
-To run application Tomcat + Java + Scala + Sbt must me installed.
+To run application Node + Tomcat + Java + Scala + Sbt must me installed.
 After all installation execute in terminal following commands
 
 #### compile web
