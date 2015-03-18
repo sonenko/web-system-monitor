@@ -5,10 +5,14 @@ After all installation execute in terminal following commands
 
 #### compile web
 > cd src/main/resources/web-app
+
 > npm install
 
 #### run server
+> cd {project root}
+
 > sbt
+
 > container:start
 
 Then wait till you see in terminal output `SelectChannelConnector@0.0.0.0:8080`.
