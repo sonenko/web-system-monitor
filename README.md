@@ -1,6 +1,6 @@
 # run
 OS - OSX
-To run application Node + Tomcat + Java + Sbt must be installed.
+To run application Node + Tomcat + JDK + Sbt must be installed.
 After all installation execute in terminal following commands
 
 #### compile web
