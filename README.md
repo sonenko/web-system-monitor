@@ -30,4 +30,4 @@ Afterwards, navigate your browser to http://localhost:8080
 ## Usage
 
 #### filter processes by name
-use `*` for partial mach. eg: to find all `Google` processes type `*Google*` in search field of *Task Column* 
+use `*` for search. For example to find all `Google` processes type `*Google*` in *Task* search bar of the processes grid
