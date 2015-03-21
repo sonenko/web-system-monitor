@@ -36,4 +36,12 @@ angular.module("app")
 
   .controller("ConfigurationCtrl", function ($scope) {
     $scope.cancelPrevIntervals();
+
+    $scope.options = [
+      {value: 1000, name: "1 sec"},
+      {value: 2000, name: "2 sec"},
+      {value: 10000, name: "10 sec"},
+      {value: 60000, name: "1 min"}
+    ];
+
   });
