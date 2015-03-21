@@ -1,4 +1,4 @@
-## About
+## about
 Simple system activity monitor. Initially was implemented for 3 hours as test task for Scala, Spray and AngularJS stack.
 
 ## run
@@ -30,7 +30,7 @@ Afterwards, navigate your browser to http://localhost:8080
 ![alt tag](readme_files/configuration.png)
 
 
-## Usage
+## usage
 
 #### filter processes by name
 use `*` for search. For example to find all `Google` processes type `*Google*` in *Task* search bar of the processes grid
