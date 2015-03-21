@@ -1,7 +1,7 @@
 <form novalidate>
   <div class="form-group">
     <label>Refresh interval</label>
-    <select class="form-control" ng-model="config.refreshRate">
+    <select class="form-control" ng-model="gridDynConfig.refreshRate">
       <option value="1000">1 sec</option>
       <option value="2000">2 sec</option>
       <option value="5000">5 sec</option>
@@ -12,6 +12,6 @@
 
   <div class="form-group">
     <label>Highlight max cpu from</label>
-    <input class="form-control" type="number" ng-model="config.maxCpu"/>
+    <input class="form-control" type="number" ng-model="gridDynConfig.maxCpu"/>
   </div>
 </form>

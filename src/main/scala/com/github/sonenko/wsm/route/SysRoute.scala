@@ -1,10 +1,12 @@
-package com.github.sonenko.sysmonsim
+package com.github.sonenko.wsm
 package route
 
 import spray.httpx.SprayJsonSupport._
 import spray.routing.{HttpService, Route}
-import com.github.sonenko.sysmonsim.service.SysService
-import com.github.sonenko.sysmonsim.route.propocol.JsonProtocol._
+
+import com.github.sonenko.wsm.service.SysService
+import com.github.sonenko.wsm.route.propocol.JsonProtocol._
+
 
 trait SysRoute extends HttpService {
 
@@ -13,8 +15,5 @@ trait SysRoute extends HttpService {
   val sysRoute: Route =
     (path("api" / "info") & get){
       complete {sysService.getInfo}
-    } ~
-    (path("api" / "userinfo") & get){
-      complete {sysService.getInfoForCurrentUser}
     }
 }

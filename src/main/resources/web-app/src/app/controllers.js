@@ -1,8 +1,8 @@
 angular.module("app")
-  .controller("GridCtrl", function ($scope, CurPageService, ProcessesService, $interval) {
+  .controller("ProcessesCtrl", function ($scope, ProcessesService, $interval) {
 
-    $scope.config.maxCpu = parseInt($scope.config.maxCpu, 10);
-
+    $scope.gridDynConfig.maxCpu = parseInt($scope.gridDynConfig.maxCpu, 10);
+    $scope.data = [];
     $scope.gridOptions = {
       enableFiltering: true,
       columnDefs: [
@@ -10,7 +10,7 @@ angular.module("app")
         {field: 'user', displayName: 'User', enableCellEdit: false},
         {field: 'cpu', displayName: 'Processor %', enableCellEdit: false,
           cellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {
-            if (grid.getCellValue(row,col) > $scope.config.maxCpu) return 'red';
+            if (grid.getCellValue(row, col) > $scope.gridDynConfig.maxCpu) return 'red';
           }
         },
         {field: 'memory', displayName: 'Memory %', enableCellEdit: false},
@@ -23,18 +23,13 @@ angular.module("app")
       data: $scope.data
     };
 
-    function apiPath() {
-      return CurPageService.isAdministrator() ? "info" : "userinfo";
-    }
-
-
     function refresh() {
-      ProcessesService.userProcesses(apiPath(), function (data) {
+      ProcessesService.processes(function (data) {
         $scope.gridOptions.data = data
       });
     }
     refresh();
-    var interval = $interval(refresh, parseInt($scope.config.refreshRate, 10));
+    var interval = $interval(refresh, parseInt($scope.gridDynConfig.refreshRate, 10));
     $scope.cancelPrevIntervals();
     $scope.watchInterval(interval);
   })

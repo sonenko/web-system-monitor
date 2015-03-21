@@ -5,7 +5,6 @@
         </encoder>
     </appender>
 
-    <logger name="com.typesafe.slick" level="WARN" />
     <logger name="spray.http" level="WARN" />
     <logger name="spray.routing" level="WARN" />
 

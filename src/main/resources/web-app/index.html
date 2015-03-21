@@ -31,14 +31,13 @@
 
   <script src="resources/dist/all.min.js"></script>
 </head>
-<body ng-controller="AppController">
+<body ng-controller="AppCtrl">
 <header>
   <nav class="navbar navbar-static-top bs-docs-nav navbar-inverse">
     <div class="container">
       <ul class="nav navbar-nav">
-        <li ng-class="{active:curPage.isUser()}"><a ng-href="#user">User</a></li>
-        <li ng-class="{active:curPage.isAdministrator()}"><a ng-href="#administrator">Administrator</a></li>
-        <li ng-class="{active:curPage.isConfiguration()}"><a ng-href="#configuration">Configuration</a></li>
+        <li ng-class="{active:isProcessesPage()}"><a ng-href="#user">Processes</a></li>
+        <li ng-class="{active:isConfigurationPage()}"><a ng-href="#configuration">Configuration</a></li>
       </ul>
     </div>
   </nav>

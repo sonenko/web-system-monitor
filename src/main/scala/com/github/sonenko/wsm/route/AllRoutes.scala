@@ -1,7 +1,7 @@
-package com.github.sonenko.sysmonsim.route
+package com.github.sonenko.wsm.route
 
 import akka.actor.ActorRefFactory
-import com.github.sonenko.sysmonsim.service.SysService
+import com.github.sonenko.wsm.service.SysService
 import spray.routing.{Route, HttpServiceActor}
 
 trait AllRoutes

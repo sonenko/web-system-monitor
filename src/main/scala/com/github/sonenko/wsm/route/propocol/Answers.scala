@@ -1,4 +1,4 @@
-package com.github.sonenko.sysmonsim.route.propocol
+package com.github.sonenko.wsm.route.propocol
 
 object Answers {
   case class ProcessInfoA(

@@ -1,8 +1,8 @@
-package com.github.sonenko.sysmonsim.service
+package com.github.sonenko.wsm.service
 
 import scala.sys.process._
 import scala.util.Try
-import com.github.sonenko.sysmonsim.route.propocol.Answers.ProcessInfoA
+import com.github.sonenko.wsm.route.propocol.Answers.ProcessInfoA
 
 
 class SysService {
@@ -12,11 +12,6 @@ class SysService {
       val processUntyped: List[String] = str.replaceAll("\\s+", " ").trim().split(' ').toList
       seqToInfo(processUntyped)
     }
-
-  def getInfoForCurrentUser: List[ProcessInfoA] = {
-    val curUser = System.getProperties().get("user.name").toString
-    getInfo.filter(_.user.toUpperCase == curUser.toUpperCase)
-  }
 
   // USER, PID, %CPU, %MEM, VSZ, RSS, TT, STAT, STARTED, TIME, COMMAND
   private def seqToInfo(processData: List[String]): Option[ProcessInfoA] = processData match {

@@ -1,7 +1,9 @@
-package com.github.sonenko.sysmonsim.route.propocol
+package com.github.sonenko.wsm.route.propocol
 
-import com.github.sonenko.sysmonsim.route.propocol.Answers._
 import spray.json._
+
+import com.github.sonenko.wsm.route.propocol.Answers._
+
 
 object JsonProtocol extends DefaultJsonProtocol{
   implicit val ProcessInfoAF = jsonFormat5(ProcessInfoA)

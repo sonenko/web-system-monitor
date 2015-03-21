@@ -1,4 +1,4 @@
-package com.github.sonenko.sysmonsim
+package com.github.sonenko.wsm
 
 import com.typesafe.config.ConfigFactory
 

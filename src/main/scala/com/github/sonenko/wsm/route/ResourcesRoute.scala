@@ -1,8 +1,9 @@
-package com.github.sonenko.sysmonsim
+package com.github.sonenko.wsm
 package route
 
 import spray.routing.{HttpService, Route}
 import spray.routing.directives.CachingDirectives._
+
 
 trait ResourcesRoute extends HttpService {
 
