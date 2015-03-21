@@ -20,11 +20,14 @@ Afterwards, navigate your browser to http://localhost:8080
 
 ## Screenshots
 
-#### Admin page (all processes)
-![alt tag](readme_files/admin.png)
-
-#### User page (user processes)
-![alt tag](readme_files/user.png)
+#### Processes page
+![alt tag](readme_files/processes.png)
 
 #### Config page
 ![alt tag](readme_files/configuration.png)
+
+
+## Usage
+
+#### filter processes by name
+use `*` for partial mach. eg: to find all `Google` processes type `*Google*` in search field of *Task Column* 

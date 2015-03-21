@@ -6,7 +6,7 @@ angular.module("app")
     $scope.gridOptions = {
       enableFiltering: true,
       columnDefs: [
-        {field: 'taskName', displayName: 'Task Name', enableCellEdit: false},
+        {field: 'taskName', displayName: 'Task', enableCellEdit: false},
         {field: 'user', displayName: 'User', enableCellEdit: false},
         {field: 'cpu', displayName: 'Processor %', enableCellEdit: false,
           cellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {
@@ -14,7 +14,7 @@ angular.module("app")
           }
         },
         {field: 'memory', displayName: 'Memory %', enableCellEdit: false},
-        {field: 'description', displayName: 'Description', enableCellEdit: false}
+        {field: 'description', displayName: 'Command', enableCellEdit: false}
       ],
       sortInfo: {
         fields: ['cpu'],
