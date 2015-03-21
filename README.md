@@ -1,4 +1,7 @@
-# run
+## About
+Simple system activity monitor. Initially was implemented for 3 hours as test task for Scala, Spray and AngularJS stack.
+
+## run
 OS - OSX
 To run application Node + Tomcat + JDK + Sbt must be installed.
 After all installation execute in terminal following commands
