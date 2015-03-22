@@ -30,6 +30,7 @@ object Dependencies {
     val caching = "io.spray" % "spray-caching_2.11" % "1.3.2"
     val testkit = apply("testkit") % "test"
     val json = "io.spray" %% "spray-json" % "1.2.6"
+    val websocket = "com.wandoulabs.akka" %% "spray-websocket" % "0.1.4"
   }
 
   object joda {

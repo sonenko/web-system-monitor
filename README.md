@@ -1,5 +1,5 @@
 ## about
-Simple system activity monitor. Initially was implemented for 3 hours as test task for Scala, Spray and AngularJS stack.
+Simple system activity monitor. Initially was implemented for 3 hours as test task using Scala, Spray and AngularJS.
 
 ## run
 OS - OSX
