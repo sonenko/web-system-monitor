@@ -28,7 +28,7 @@ object Build extends Build {
     .settings(libraryDependencies ++= Seq(
       log.logback, log.scalaloggingSlf4j, log.jclOverSlf4j, log.julToSlf4j, log.log4jOverSlf4j, log.slf4jApi,
       joda.time, joda.convert, joda.money,
-      akka.actor, spray.servlet, spray.json, spray.routing, spray.httpx, spray.caching, spray.websocket,
+      akka.actor, spray.servlet, spray.json, spray.routing, spray.httpx, spray.caching, // spray.websocket,
       webContainer.servlet, webContainer.tomcatCore, webContainer.jettyWebApp,
       scalaz,
       spray.testkit, akka.testkit, tests.specs2, tests.mockito
