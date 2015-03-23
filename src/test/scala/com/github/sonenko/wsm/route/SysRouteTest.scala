@@ -14,6 +14,7 @@ class SysRouteTest extends RestSpec {
     "respond with status code 200 and contain correct JSON" in new Scope {
       val answer = ProcessInfoA(
         taskName = "taskName",
+        pid = 1,
         user = "user",
         cpu = 0.1,
         memory = 0.1,
@@ -24,6 +25,7 @@ class SysRouteTest extends RestSpec {
         s"""
            |[{
            |  "taskName": "${answer.taskName}",
+           |  "pid": 1,
            |  "user": "${answer.user}",
            |  "cpu": ${answer.cpu},
            |  "memory": ${answer.memory},
