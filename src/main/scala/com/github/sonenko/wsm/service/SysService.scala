@@ -14,7 +14,7 @@ class SysService {
     }
 
   def kill(processId: Int): Try[Unit] = Try {
-    Seq("kill", processId.toString).lineStream
+    Seq("kill", processId.toString, "-9").lineStream
   }
 
   // USER, PID, %CPU, %MEM, VSZ, RSS, TT, STAT, STARTED, TIME, COMMAND

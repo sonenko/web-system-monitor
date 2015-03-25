@@ -1,13 +1,15 @@
 <style>
   .grid {
-    height: 690px;
+    height: 626px;
   }
   .red{
     color:red;
   }
 </style>
 <div class="form-group">
-  <button class="btn btn-danger" ng-click="killProcess()" ng-disabled="!enableKill">Kill with fire :)</button>
+  <button class="btn btn-danger" ng-click="killProcess()" ng-disabled="!enableKill">
+    <span class="glyphicon glyphicon-fire"></span>
+    Kill with fire :)</button>
 </div>
 
 <div class="grid" ui-grid="gridOptions" ui-grid-selection ui-grid-edit></div>
