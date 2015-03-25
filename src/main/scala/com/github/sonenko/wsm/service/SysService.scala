@@ -13,6 +13,10 @@ class SysService {
       seqToInfo(processUntyped)
     }
 
+  def kill(processId: Int): Try[Unit] = Try {
+    Seq("kill", processId.toString).lineStream
+  }
+
   // USER, PID, %CPU, %MEM, VSZ, RSS, TT, STAT, STARTED, TIME, COMMAND
   private def seqToInfo(processData: List[String]): Option[ProcessInfoA] = processData match {
     case all @ user :: pid :: cpuStr :: memStr :: _ :: _ :: _ :: _ :: _ :: _ :: name :: xs =>

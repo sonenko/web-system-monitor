@@ -1,5 +1,5 @@
 angular.module("app")
-  .controller("ProcessesCtrl", function ($scope, ProcessesService, $interval) {
+  .controller("ProcessesCtrl", function ($scope, ProcessesService, $interval, uiGridConstants) {
 
     $scope.gridDynConfig.maxCpu = parseInt($scope.gridDynConfig.maxCpu, 10);
     $scope.data = [];

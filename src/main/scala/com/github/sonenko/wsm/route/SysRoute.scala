@@ -1,6 +1,7 @@
 package com.github.sonenko.wsm
 package route
 
+import spray.http.StatusCodes
 import spray.httpx.SprayJsonSupport._
 import spray.routing.{HttpService, Route}
 
@@ -12,8 +13,20 @@ trait SysRoute extends HttpService {
 
   def sysService: SysService
 
-  val sysRoute: Route =
-    (path("api" / "info") & get){
-      complete {sysService.getInfo}
+  val sysRoute: Route = pathPrefix("api") {
+    path("info") {
+      get {
+        complete {
+          sysService.getInfo
+        }
+      }
+    } ~
+    path("kill" / IntNumber) { processId =>
+      complete {
+        sysService.kill(processId).map{ _ =>
+          StatusCodes.Accepted
+        }
+      }
     }
+  }
 }

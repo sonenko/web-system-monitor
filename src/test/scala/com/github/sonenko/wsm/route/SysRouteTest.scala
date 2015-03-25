@@ -3,6 +3,7 @@ package com.github.sonenko.wsm.route
 import spray.json._
 import spray.http.StatusCodes
 import spray.httpx.SprayJsonSupport._
+import scala.util.{Success, Failure}
 
 import com.github.sonenko.wsm.route.propocol.JsonProtocol._
 import com.github.sonenko.wsm.route.propocol.Answers._
@@ -38,6 +39,21 @@ class SysRouteTest extends RestSpec {
       Get(s"/api/info") ~> testRoute ~> check {
         status mustEqual StatusCodes.OK
         responseAs[JsArray] mustEqual resJSON
+      }
+    }
+  }
+
+  "POST /api/kill/{processId}" should {
+    "respond with status code 201" in new Scope {
+      sysServiceMock.kill(1) returns Success(())
+      Post("/api/kill/1") ~> testRoute ~> check {
+        status mustEqual StatusCodes.Accepted
+      }
+    }
+    "respond with status code 500 if service return failure" in new Scope {
+      sysServiceMock.kill(1) returns Failure(new Exception(""))
+      Post("/api/kill/1") ~> testRoute ~> check {
+        status mustEqual StatusCodes.InternalServerError
       }
     }
   }

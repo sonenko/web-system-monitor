@@ -2,6 +2,7 @@ angular.module("app", [
   "ngRoute",
   "angular-loading-bar",
   "ngAnimate",
+  'ngTouch',
   "ngResource",
   "ui.grid",
   "ui.grid.edit",
