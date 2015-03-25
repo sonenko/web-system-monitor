@@ -5,6 +5,10 @@ angular.module("app")
     $scope.data = [];
     $scope.gridOptions = {
       enableFiltering: true,
+      multiSelect: false,
+      noUnselect: true,
+      enableRowSelection: true,
+      enableRowHeaderSelection: false,
       columnDefs: [
         {field: 'taskName', displayName: 'Task', enableCellEdit: false},
         {field: 'pid', displayName: 'PID', enableCellEdit: false},
@@ -24,9 +28,36 @@ angular.module("app")
       data: $scope.data
     };
 
+    $scope.gridOptions.onRegisterApi = function(gridApi){
+      $scope.gridApi = gridApi;
+      gridApi.selection.on.rowSelectionChanged($scope,function(row){
+        var msg = 'row selected ' + row.isSelected;
+        selectedPid = row.entity.pid;
+        $scope.enableKill = true;
+      });
+    };
+
+
+    $scope.killProcess = function () {
+      ProcessesService.kill(selectedPid, function () {
+        $scope.enableKill = false;
+        selectedPid = undefined;
+      });
+    };
+
+    //
+    var selectedPid = undefined;
+    $scope.enableKill = false;
+    //
     function refresh() {
       ProcessesService.processes(function (data) {
-        $scope.gridOptions.data = data
+        $scope.gridOptions.data = data;
+        if (selectedPid) {
+          $interval( function() {
+            var selectedRow = _.find(data, function (v) {return v.pid = selectedPid});
+            $scope.gridApi.selection.selectRow(selectedRow);
+          }, 0, 1);
+        }
       });
     }
     refresh();

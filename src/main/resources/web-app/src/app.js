@@ -50,6 +50,6 @@ angular.module("app", [
       //
       $scope.gridDynConfig = {
         maxCpu: 10,
-        refreshRate: 1000
+        refreshRate: 2000
       };
     }]);
