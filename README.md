@@ -1,6 +1,9 @@
 ## about
 Simple system activity monitor. Initially was implemented for 3 hours as test task using Scala, Spray and AngularJS.
 
+## Attention
+this is not mock project. Be carefull when killing process from UI, java runtime is involved.
+
 ## run
 OS - OSX
 To run application Node + Tomcat + JDK + Sbt must be installed.
